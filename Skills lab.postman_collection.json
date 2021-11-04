@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "588ef086-dcf2-49ad-831c-949b201a84a4",
+		"name": "Skills lab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Afterwards",
+			"item": [
+				{
+					"name": "Delete a Webhook subscription",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Bb-Api-Subscription-Key",
+								"value": "{{BBSubscriptionKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.sky.blackbaud.com/webhook/v1/subscriptions/bd620f4e-c0c7-434d-aa85-c9c9170c9284",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sky",
+								"blackbaud",
+								"com"
+							],
+							"path": [
+								"webhook",
+								"v1",
+								"subscriptions",
+								"bd620f4e-c0c7-434d-aa85-c9c9170c9284"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test call to endpoint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "test",
+									"value": "value",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://{{PipeDreamURL}}?webhookKey=iPn2s75mNBV1LxoYlnVo6hfdakzELFX1Ap1",
+							"protocol": "https",
+							"host": [
+								"{{PipeDreamURL}}"
+							],
+							"query": [
+								{
+									"key": "webhookKey",
+									"value": "iPn2s75mNBV1LxoYlnVo6hfdakzELFX1Ap1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session",
+			"item": [
+				{
+					"name": "Subscribe to a Webhook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Bb-Api-Subscription-Key",
+								"value": "{{BBSubscriptionKey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"webhook_url\": \"https://438b73a98ea982523a9c6dcc9d886fca.m.pipedream.net?webhookKey=iPn2s75mNBV1LxoYlnVo6hfdakzELFX1Ap1\",\r\n  \"event_type\": \"com.blackbaud.constituent.address.change.v1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.sky.blackbaud.com/webhook/v1/subscriptions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sky",
+								"blackbaud",
+								"com"
+							],
+							"path": [
+								"webhook",
+								"v1",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Webhook subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Bb-Api-Subscription-Key",
+								"value": "{{BBSubscriptionKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.sky.blackbaud.com/webhook/v1/subscriptions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sky",
+								"blackbaud",
+								"com"
+							],
+							"path": [
+								"webhook",
+								"v1",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lookup constituent",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Bb-Api-Subscription-Key",
+								"value": "{{BBSubscriptionKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.sky.blackbaud.com/constituent/v1/constituents/7294",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sky",
+								"blackbaud",
+								"com"
+							],
+							"path": [
+								"constituent",
+								"v1",
+								"constituents",
+								"7294"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lookup address",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Bb-Api-Subscription-Key",
+								"value": "{{BBSubscriptionKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.sky.blackbaud.com/constituent/v1/constituents/addresses/5380",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sky",
+								"blackbaud",
+								"com"
+							],
+							"path": [
+								"constituent",
+								"v1",
+								"constituents",
+								"addresses",
+								"5380"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lookup solicit code",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Bb-Api-Subscription-Key",
+								"value": "{{BBSubscriptionKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.sky.blackbaud.com/commpref/v1/constituents/4340/constituentsolicitcodes",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sky",
+								"blackbaud",
+								"com"
+							],
+							"path": [
+								"commpref",
+								"v1",
+								"constituents",
+								"4340",
+								"constituentsolicitcodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Who made the change?",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Bb-Api-Subscription-Key",
+								"value": "{{BBSubscriptionKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.sky.blackbaud.com/nxt-data-integration/v1/re/users/56",
+							"protocol": "https",
+							"host": [
+								"api",
+								"sky",
+								"blackbaud",
+								"com"
+							],
+							"path": [
+								"nxt-data-integration",
+								"v1",
+								"re",
+								"users",
+								"56"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "redirect_uri",
+				"value": "{{CallbackURL}}",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{ClientSecret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{ClientId}}",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "BBDevDays webhook app",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "authorization_code",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://oauth2.sky.blackbaud.com/authorization",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://oauth2.sky.blackbaud.com/token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ClientId",
+			"value": "<Add the client id from your own Blackbaud app>"
+		},
+		{
+			"key": "ClientSecret",
+			"value": "<Add the client secret from your own Blackbaud app>"
+		},
+		{
+			"key": "CallbackURL",
+			"value": "<Add the callback url from your own Blackbaud app>"
+		},
+		{
+			"key": "BBSubscriptionKey",
+			"value": "<Add the subscription key from your own Blackbaud account>"
+		},
+		{
+			"key": "PipeDreamURL",
+			"value": "<Add the PipeDream URL from your own account>"
+		}
+	]
+}
